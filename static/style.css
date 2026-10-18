@@ -1,0 +1,277 @@
+/* ===== ГЛОБАЛЬНЫЕ СТИЛИ ===== */
+* {
+    margin: 0 auto;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Segoe UI', 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    min-height: 100vh;
+    display: block;
+    horizontal-align: middle;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+}
+
+
+/* ===== КАРТОЧКА ===== */
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* ===== ЗАГОЛОВКИ ===== */
+h1 {
+    font-size: 32px;
+    font-weight: 700;
+    text-align: center;
+    color: #fafafa;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    -webkit-background-clip: text;
+    background-clip: text;
+    margin-bottom: 8px;
+}
+h2 {
+    font-size: 32px;
+}
+.subtitle {
+    text-align: center;
+    color: #666;
+    margin-bottom: 30px;
+    font-size: 14px;
+}
+
+/* ===== DRAG-AND-DROP ЗОНА ===== */
+.drop-zone {
+    border: 4px dashed #cbd5e1;
+    border-color: rgba(255, 255, 255, 0.5);
+    border-radius: 16px;
+    padding: 40px 20px;
+    text-align: center;
+    align-items: center;
+    width: 70%;
+    cursor: pointer;
+    transition: all 0.25s ease;
+    background: rgba(255, 255, 255, 1);
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+
+@media {
+
+}
+
+.drop-zone:hover {
+    border-color: #667eea;
+    background: #f5f3ff;
+}
+
+.drop-zone.drag-over {
+    border-color: #667eea;
+    background: rgba(255, 255, 255, 0.77);
+    transform: scale(1.01);
+}
+
+.drop-zone p:first-child {
+    font-size: 48px;
+    margin-bottom: 12px;
+}
+
+.drop-zone-hint {
+    font-size: 20px;
+    color: #222222;
+    transparent: 10%;
+    margin-top: 8px;
+}
+
+/* ===== КНОПКИ ===== */
+.btn-submit {
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    color: white;
+    border: none;
+    padding: 12px 28px;
+    border-radius: 40px;
+    font-size: 16px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    box-shadow: 0 4px 12px rgba(102, 126, 234, 0.3);
+}
+
+.btn-submit:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 20px rgba(102, 126, 234, 0.4);
+}
+
+.btn-submit:active {
+    transform: translateY(0);
+}
+
+.btn-clear {
+    background: #f1f5f9;
+    color: #475569;
+    border: none;
+    padding: 12px 28px;
+    border-radius: 40px;
+    font-size: 16px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    margin-left: 12px;
+}
+
+.btn-clear:hover {
+    background: #e2e8f0;
+    color: #1e293b;
+}
+
+/* ===== СПИСОК ВЫБРАННЫХ ФАЙЛОВ ===== */
+#file-list-container {
+    margin-top: 24px;
+    padding: 20px;
+    width: 70%;
+    max-height: 700px;
+    background: #f8fafc;
+    border-radius: 20px;
+    animation: fadeIn 0.3s ease;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(-10px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+
+#file-list-container h3 {
+    font-size: 16px;
+    font-weight: 600;
+    color: #1e293b;
+    margin-bottom: 12px;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+#file-list-container h3::before {
+    content: "📎";
+    font-size: 16px;
+}
+
+#file-list {
+    list-style: none;
+    padding: 0;
+    margin: 0 0 16px 0;
+    max-height: 280px;
+    overflow-y: auto;
+    border-radius: 12px;
+}
+
+#file-list li {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 12px 14px;
+    background: white;
+    border-radius: 12px;
+    margin-bottom: 8px;
+    font-size: 14px;
+    color: #1e293b;
+    transition: all 0.2s ease;
+    border: 1px solid #e2e8f0;
+}
+
+#file-list li:hover {
+    border-color: #cbd5e1;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+}
+
+#file-list li button {
+    background: none;
+    border: none;
+    color: #94a3b8;
+    cursor: pointer;
+    font-size: 18px;
+    padding: 0 8px;
+    transition: color 0.2s;
+}
+
+#file-list li button:hover {
+    color: #ef4444;
+}
+
+/* ===== КНОПКИ В КАРТОЧКЕ ===== */
+.button-group {
+    display: flex;
+    justify-content: center;
+    gap: 12px;
+    margin-top: 16px;
+}
+
+/* ===== АДАПТИВНОСТЬ ===== */
+@media (max-width: 640px) {
+    .card {
+        padding: 24px;
+    }
+
+    h1 {
+        font-size: 26px;
+    }
+
+    .drop-zone {
+        padding: 30px 16px;
+        height: 5000px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        background: #ff0000;
+    }
+
+    .drop-zone p:first-child {
+        font-size: 40px;
+    }
+
+    .btn-submit, .btn-clear {
+        padding: 10px 20px;
+        font-size: 14px;
+    }
+
+    #file-list li {
+        font-size: 12px;
+        padding: 10px 12px;
+    }
+
+}
+
+/* ===== СКРОЛЛБАР ===== */
+#file-list::-webkit-scrollbar {
+    width: 6px;
+}
+
+#file-list::-webkit-scrollbar-track {
+    background: #e2e8f0;
+    border-radius: 10px;
+}
+
+#file-list::-webkit-scrollbar-thumb {
+    background: #cbd5e1;
+    border-radius: 10px;
+}
+
+#file-list::-webkit-scrollbar-thumb:hover {
+    background: #94a3b8;
+}

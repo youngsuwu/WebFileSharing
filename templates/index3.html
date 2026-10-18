@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+    <title>File Sharing</title>
+</head>
+<body>
+    <h1> {{ server }} </h1>
+    <h1> {{ ip }} </h1>
+    <div id="drop-zone" class="drop-zone">
+        <p>📁 Перетащите файлы сюда</p>
+        <h2 class="drop-zone-hint">или нажмите на область</h2>
+    </div>
+    <div id="file-list-container" style="display: none;">
+        <h3>Выбранные файлы:</h3>
+        <ul id="file-list"></ul>
+        <div id="progress-container" style="display: none;">
+            <div id="progress-bar"></div>
+            <div id="progress-text">0%</div>
+        </div>
+        <button id="send-files-btn" class="btn-submit">Отправить файлы</button>
+        <button id="clear-files-btn" class="btn-clear">Очистить</button>
+    </div>
+    <script src="{{ url_for('static', filename='script.js') }}"></script>
+</body>
+</html>
